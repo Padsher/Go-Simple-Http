@@ -9,6 +9,7 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"errors"
+	routes "routes"
 )
 
 func log(message string) {
@@ -108,7 +109,7 @@ func main() {
 	fmt.Println("CONFIG")
 	fmt.Println(config)
 	dbStr := fmt.Sprintf(
-		"%v:%v@%v:%v/%v",
+		"%v:%v@(%v:%v)/%v",
 		config.username,
 		config.password,
 		config.host,

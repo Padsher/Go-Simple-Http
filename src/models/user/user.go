@@ -17,16 +17,14 @@ type User struct {
 		Name string
 		Value string
 	}
-
-	JoinPhotoCond string
 }
 
-func NewUser() *User {
+func NewUser() User {
 	user := User{}
 	user.TableName = "users"
 	user.Id.Name = "id"
 	user.Name.Name = "name"
-	return &user
+	return user
 }
 
 func (this *User) Migrate(db *sql.DB) {

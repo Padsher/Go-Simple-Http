@@ -27,18 +27,16 @@ type Photo struct {
 		Name string
 		Value big.Int
 	}
-
-	JoinUserCond string
 }
 
-func NewPhoto() *Photo {
+func NewPhoto() Photo {
 	photo := Photo{}
 	photo.TableName = "photos"
 	photo.Id.Name = "id"
 	photo.FullPath.Name = "full_path"
 	photo.PreviewPath.Name = "preview_path"
 	photo.UserId.Name = "user_id"
-	return &photo
+	return photo
 }
 
 func (this *Photo) Migrate(db *sql.DB) {
